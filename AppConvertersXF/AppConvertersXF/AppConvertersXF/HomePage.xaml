@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Conv="clr-namespace:AppConvertersXF.ValueConverters;assembly=AppConvertersXF"
+             x:Class="AppConvertersXF.HomePage">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Conv:TextToBoolConverter x:Key="TextBoolConverter"/>
+      <Conv:TextToColorConverter x:Key="TextClrConverter"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
+
+    <Label Text=" Interfaz IValueConverter.Convert (Texto a Bool)" FontSize="Small" TextColor="Fuchsia"></Label>
+    <Entry x:Name="EntStatus" WidthRequest="100"  TextColor="Yellow" />
+    
+    <Label Text="Interfaz IValueConverter.ConvertBack (Bool a texto)" FontSize="Small" TextColor="Fuchsia"></Label>
+    <Switch BindingContext="{x:Reference Name=EntStatus}" IsToggled="{Binding Text, Converter={StaticResource TextBoolConverter}}" />
+
+    <Label Text="Nombre de Color" BindingContext="{x:Reference Name=entColor}" BackgroundColor="{Binding Text, Converter={StaticResource TextClrConverter}}" FontSize="Small"></Label>
+    <Entry x:Name="entColor"  WidthRequest="100" />
+  </StackLayout>
+</ContentPage>
