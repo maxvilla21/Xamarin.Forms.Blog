@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppStylesXF.TestPage">
+  <StackLayout>
+    <StackLayout>
+      <Label Text="Titulo de la Pagina" Style="{StaticResource blueTextHeadline}" />
+      <Label Text="Descripcion de la pagina" Style="{StaticResource interitedTextStyle}"/>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>

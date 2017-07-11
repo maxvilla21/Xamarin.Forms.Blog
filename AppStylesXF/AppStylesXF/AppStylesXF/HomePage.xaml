@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppStylesXF.HomePage">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="blueTextHeadline" TargetType="Label">
+        <Setter Property="TextColor" Value="Blue" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="FontSize" Value="30" />
+      </Style>
+      <Style x:Key="bodyText" TargetType="Label">
+        <Setter Property="TextColor" Value="Red" />
+      </Style>
+      <Style x:Key="interitedTextStyle" TargetType="Label" BasedOn="{StaticResource bodyText}">
+        <Setter Property="FontSize" Value="40" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  
+  <StackLayout>
+    <StackLayout>
+      <Label Text="Header" Style="{StaticResource blueTextHeadline}" />
+      <Label Text="Bodytext value" Style="{StaticResource interitedTextStyle}"/>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>
